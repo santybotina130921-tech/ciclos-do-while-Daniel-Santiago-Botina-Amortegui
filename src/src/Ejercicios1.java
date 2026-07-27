@@ -1,41 +1,33 @@
-//Garantiza la visualización del menú al menos una vez y se mantiene activo
-// hasta que el usuario elija la opción de salida.
-
 import java.util.Scanner;
+
 public class Ejercicios1 {
-        public static void main(String[] args) {
-            Scanner scanner = new Scanner(System.in);
-            int opcion;
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int opcion;
 
-            do {
-                System.out.println("\n=== SISTEMA DE VENTAS POS ===");
-                System.out.println("1. Registrar nueva venta");
-                System.out.println("2. Consultar inventario");
-                System.out.println("3. Generar reporte diario");
-                System.out.println("4. Salir");
-                System.out.print("Seleccione una opción (1-4): ");
+        do {
+            System.out.println("\n=== MENÚ PRINCIPAL ===");
+            System.out.println("1. Saludar");
+            System.out.println("2. Ver fecha aproximada");
+            System.out.println("3. Salir");
+            System.out.print("Seleccione una opción: ");
 
-                opcion = scanner.nextInt();
+            opcion = scanner.nextInt();
 
-                switch (opcion) {
-                    case 1:
-                        System.out.println("-> Módulo de registro de ventas iniciado.");
-                        break;
-                    case 2:
-                        System.out.println("-> Consultando inventario actual...");
-                        break;
-                    case 3:
-                        System.out.println("-> Generando reporte en PDF...");
-                        break;
-                    case 4:
-                        System.out.println("Saliendo del sistema. ¡Hasta pronto!");
-                        break;
-                    default:
-                        System.out.println("Opción no válida. Intente nuevamente.");
-                }
-            } while (opcion != 4);
+            if (opcion == 1) {
+                System.out.println("¡Hola! Bienvenido al programa.");
+            } else if (opcion == 2) {
+                System.out.println("Hoy es un excelente día para programar.");
+            } else if (opcion == 3) {
+                System.out.println("Saliendo del programa...");
+            } else {
+                System.out.println("Opción no válida. Intente de nuevo.");
+            }
 
-            scanner.close();
-        }
+        } while (opcion != 3);
+
+        scanner.close();
     }
-
+}
+//Presenta un menú numerado al usuario y procesa la selección usando solo if y else if. Se repite hasta que el usuario
+// elija la opción de salir (número 3).
